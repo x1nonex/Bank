@@ -1,0 +1,56 @@
+﻿<Window x:Class="Bank.Calkulator"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bank"
+        mc:Ignorable="d"
+        Title="Calkulator" Height="550" Width="850" ResizeMode="NoResize">
+
+    <Grid >
+        <Button Content="Сравнить параметры" Margin="0,0,10,10" VerticalAlignment="Bottom" Height="30" Width="230" FontSize="16" Background="White" BorderBrush="Black" Foreground="Black" Click="Button_Click" HorizontalContentAlignment="Center" HorizontalAlignment="Right" FontFamily="Elephant"/>
+
+        <Slider x:Name="Slider_monthly_replenishment" Minimum="0" Maximum="5000000" HorizontalAlignment="Left" Margin="14,429,0,0" Width="370" ValueChanged="Slider_monthly_replenishment_ValueChanged" HorizontalContentAlignment="Stretch" VerticalAlignment="Top" FontFamily="Elephant"/>
+
+        <TextBox x:Name="TextBox_monthly_replenishment" Margin="14,391,0,0" TextWrapping="Wrap" Text="0" Width="370" Height="33" FontSize="20" HorizontalAlignment="Left" TextChanged="TextBox_monthly_replenishment_TextChanged" HorizontalContentAlignment="Stretch" VerticalAlignment="Top" FontFamily="Elephant"/>
+
+        <Label Content="0 тыс." HorizontalAlignment="Left" Margin="3,439,0,0" FontSize="9" HorizontalContentAlignment="Stretch" VerticalAlignment="Top" FontFamily="Elephant"/>
+        <Label Content="5 млн" HorizontalAlignment="Left" Margin="363,439,0,0" FontSize="9" HorizontalContentAlignment="Stretch" VerticalAlignment="Top" FontFamily="Elephant"/>
+        <Label Content="2,5 млн" HorizontalAlignment="Left" Margin="181,439,0,0" FontSize="9" HorizontalContentAlignment="Stretch" VerticalAlignment="Top" FontFamily="Elephant"/>
+
+        <Label Content="Ежемесячное пополнение" HorizontalAlignment="Left" Margin="14,353,0,0" FontSize="20" HorizontalContentAlignment="Stretch" VerticalAlignment="Top" FontFamily="Elephant"/>
+
+        <TextBox x:Name="TextBox_term" Margin="14,257,0,0" TextWrapping="Wrap" Text="0" Height="33" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="370" HorizontalContentAlignment="Stretch" TextChanged="TextBox_term_TextChanged" FontFamily="Elephant"/>
+
+        <Slider x:Name="Slider_term" Minimum="0" Maximum="60" Margin="14,295,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="370" HorizontalContentAlignment="Stretch" ValueChanged="Slider_term_ValueChanged" FontFamily="Elephant" />
+
+        <Label Content="Срок" HorizontalAlignment="Left" Margin="14,220,0,0" FontSize="20" HorizontalContentAlignment="Stretch" VerticalAlignment="Top" FontFamily="Elephant"/>
+
+        <Label Content="1 мес." HorizontalAlignment="Left" Margin="3,305,0,0" FontSize="9" HorizontalContentAlignment="Stretch" VerticalAlignment="Top" FontFamily="Elephant"/>
+        <Label Content="5 лет" HorizontalAlignment="Left" Margin="364,305,0,0" FontSize="9" HorizontalContentAlignment="Stretch" RenderTransformOrigin="0.499,0.518" VerticalAlignment="Top" FontFamily="Elephant"/>
+        <Label Content="2 года" HorizontalAlignment="Left" Margin="145,305,0,0" FontSize="9" HorizontalContentAlignment="Stretch" RenderTransformOrigin="0.281,0.609" VerticalAlignment="Top" FontFamily="Elephant"/>
+        <Label Content="1 год" HorizontalAlignment="Left" Margin="75,305,0,0" FontSize="9" HorizontalContentAlignment="Stretch" VerticalAlignment="Top" FontFamily="Elephant"/>
+
+        <TextBox x:Name="TextBox_Summ" Margin="14,114,0,0" TextWrapping="Wrap" Text="0" Height="33" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="370" HorizontalContentAlignment="Stretch" TextChanged="TextBox_Summ_TextChanged" FontFamily="Elephant"/>
+        <Slider x:Name="Slider_Summ" Minimum="1000" Maximum="10000000" Height="19" Margin="14,152,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="370" HorizontalContentAlignment="Stretch" ValueChanged="Slider_Summ_ValueChanged" FontFamily="Elephant"/>
+        <Label Content="Сумма" HorizontalAlignment="Left" Margin="14,77,0,0" FontSize="20" HorizontalContentAlignment="Stretch" VerticalAlignment="Top" FontFamily="Elephant"/>
+
+        <Label Content="1 тыс." HorizontalAlignment="Left" Margin="3,162,0,0" FontSize="9" HorizontalContentAlignment="Stretch" VerticalAlignment="Top" FontFamily="Elephant"/>
+        <Label Content="5 млн" HorizontalAlignment="Left" Margin="184,162,0,0" FontSize="9" HorizontalContentAlignment="Stretch" RenderTransformOrigin="0.524,0.531" VerticalAlignment="Top" FontFamily="Elephant"/>
+        <Label Content="10 млн" HorizontalAlignment="Left" Margin="360,162,0,0" FontSize="9" HorizontalContentAlignment="Stretch" RenderTransformOrigin="0.168,0.518" VerticalAlignment="Top" FontFamily="Elephant"/>
+        <Label Content="1 млн" HorizontalAlignment="Left" Margin="39,162,0,0" FontSize="9" HorizontalContentAlignment="Stretch" VerticalAlignment="Top" FontFamily="Elephant"/>
+
+        <Label Content="Рассчитать доход" Height="61" Margin="49,10,0,0" RenderTransformOrigin="0.018,0.058" FontSize="35" VerticalContentAlignment="Bottom" VerticalAlignment="Top" HorizontalAlignment="Left" Width="304" FontFamily="Elephant"/>
+        <Label x:Name="Label_Stable" Content="0 Руб." HorizontalAlignment="Left" Margin="610,128,0,0" VerticalAlignment="Top" FontSize="22" FontFamily="Elephant"/>
+        <Label x:Name="Label_Optimal" Content="0 Руб." HorizontalAlignment="Left" Margin="610,271,0,0" VerticalAlignment="Top" FontSize="22" FontFamily="Elephant"/>
+        <Label x:Name="Label_Standard" Content="0 Руб." HorizontalAlignment="Left" Margin="610,405,0,0" VerticalAlignment="Top" FontSize="22" FontFamily="Elephant"/>
+        <Label Content="Доход:" HorizontalAlignment="Left" Margin="610,102,0,0" VerticalAlignment="Top" FontFamily="Elephant"/>
+        <Label Content="Доход по вкладу:" HorizontalAlignment="Left" Margin="610,245,0,0" VerticalAlignment="Top" FontFamily="Elephant"/>
+        <Label Content="Доход по вкладу:" HorizontalAlignment="Left" Margin="610,379,0,0" VerticalAlignment="Top" FontFamily="Elephant"/>
+        <Label Content="Стабильный" HorizontalAlignment="Left" Margin="610,73,0,0" VerticalAlignment="Top" FontSize="22" FontFamily="Elephant"/>
+        <Label Content="Оптимальный" HorizontalAlignment="Left" Margin="610,216,0,0" VerticalAlignment="Top" FontSize="22" FontFamily="Elephant"/>
+        <Label Content="Стандарт" HorizontalAlignment="Left" Margin="610,350,0,0" VerticalAlignment="Top" FontSize="22" FontFamily="Elephant"/>
+        <Button Content="Рассчитать значение" HorizontalContentAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10,0,0,10" Width="374" Height="30" BorderBrush="Black" Background="White" Foreground="Black" FontSize="18" Click="Button_Click_1" FontFamily="Elephant"/>
+
+    </Grid>
+</Window>
